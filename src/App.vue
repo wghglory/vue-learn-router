@@ -1,9 +1,20 @@
 <template>
   <div id="app">
+    <Navigation></Navigation>
     <router-view />
     <router-view name="named-route"></router-view>
   </div>
 </template>
+
+<script>
+import Navigation from './components/Navigation';
+
+export default {
+  components: {
+    Navigation,
+  },
+};
+</script>
 
 <style>
 #app {

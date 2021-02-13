@@ -7,6 +7,10 @@ import Student from '../views/Student.vue';
 import NotFound from '../views/NotFound.vue';
 import NamedRoute from '../views/NamedRoute.vue';
 
+import Dashboard from '@/views/Dashboard.vue';
+import LevelDetail from '@/views/LevelDetail.vue';
+import SecretDetail from '@/views/SecretDetail.vue';
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -46,6 +50,30 @@ const routes = [
       },
     ],
   },
+
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: Dashboard,
+  },
+  {
+    path: '/levels/:levelId',
+    name: 'LevelDetail',
+    component: LevelDetail,
+    props: true,
+    children: [
+      {
+        path: ':secret',
+        name: 'secretDetail',
+        component: SecretDetail,
+        props: true,
+        meta: {
+          detail: '不要告诉别人',
+        },
+      },
+    ],
+  },
+
   {
     path: '/about',
     name: 'About',
