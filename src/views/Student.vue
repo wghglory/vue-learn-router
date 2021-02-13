@@ -18,17 +18,17 @@ export default {
   beforeRouteEnter(to, from, next) {
     console.log('beforeRouteEnter');
 
-    console.log(to);
-    console.log(from);
-    console.log(next);
+    // console.log(to);
+    // console.log(from);
+    // console.log(next);
     next();
   },
   beforeRouteLeave(to, from, next) {
     console.log('beforeRouteLeave');
 
-    console.log(to);
-    console.log(from);
-    console.log(next);
+    // console.log(to);
+    // console.log(from);
+    // console.log(next);
     next();
   },
   methods: {

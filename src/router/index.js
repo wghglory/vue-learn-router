@@ -29,6 +29,15 @@ const routes = [
         props: true,
         name: 'StudentDetail',
         component: Student,
+        beforeEnter(to, from, next) {
+          console.log('----beforeEnter-----');
+          next();
+        },
+        // add custom data
+        meta: {
+          isRequired: true,
+          customData: 'I can pass anything here. Use this.$route to find it',
+        },
       },
     ],
   },
@@ -51,6 +60,22 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes,
+});
+
+// global route interceptor
+router.beforeEach((to, from, next) => {
+  // next(false);
+  next();
+  // next(new Error("test error"));
+});
+
+router.afterEach((to, from) => {
+  // console.log(to);
+  // console.log(from);
+});
+
+router.onError((err) => {
+  console.log(err);
 });
 
 export default router;
