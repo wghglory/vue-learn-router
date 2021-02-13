@@ -5,6 +5,7 @@ import Home from '../views/Home.vue';
 import StudentList from '../views/StudentList.vue';
 import Student from '../views/Student.vue';
 import NotFound from '../views/NotFound.vue';
+import NamedRoute from '../views/NamedRoute.vue';
 
 Vue.use(VueRouter);
 
@@ -17,7 +18,11 @@ const routes = [
     path: '/',
     alias: ['/index'],
     name: 'Home',
-    component: Home,
+    // component: Home,
+    components: {
+      default: Home,
+      'named-route': NamedRoute,
+    },
   },
   {
     path: '/students',

@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <router-view />
+    <router-view name="named-route"></router-view>
   </div>
 </template>
 
